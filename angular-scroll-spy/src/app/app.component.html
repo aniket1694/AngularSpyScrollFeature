@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 style="text-align: center;">Foster + Partners</h1>
+  <br>
+  <div class="row">
+    <div class="col col-lg-3 col-md-12">
+      <ul class="list-group">
+        <li  class="list-group-item" [ngClass]="{'active': currentSection==='section1'}" aria-current="true" (click)="scrollTo('section1')">Section 1</li>
+        <li  class="list-group-item" [ngClass]="{'active': currentSection==='section2'}" (click)="scrollTo('section2')">Section 2</li>
+        <li  class="list-group-item" [ngClass]="{'active': currentSection==='section3'}" (click)="scrollTo('section3')">Section 3</li>
+      </ul>
+    </div>
+    <div class="col col-lg-9 col-md-12">
+      <div id="parentDiv" scroll-spy [spiedTags]="['DIV']" (changeSection)="onSectionChange($event)" style="height:180px;overflow-y: scroll;" [innerHTML]="sanitize(sectionsData.sections)"></div>
+       <br/>
+    </div>
+  </div>
+</div>
+
+
+
+
